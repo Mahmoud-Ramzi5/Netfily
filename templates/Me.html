@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    My Account
+{% endblock %}
+
+{% block main %}
+    <table class="table table-bordered">
+
+        <tbody>
+            {% for row in ME %}
+                <tr>
+                    <td><b>User Name:</b></td>
+                    <td>{{ row.username }}</td>
+                </tr>
+                <tr>
+                    <td><b>First Name:</b></td>
+                    <td>{{ row.firstname }}</td>
+                </tr>
+                <tr>
+                    <td><b>Last Name:</b></td>
+                    <td>{{ row.lastname }}</td>
+                </tr>
+                <tr>
+                    <td><b>Email:</b></td>
+                    <td>{{ row.email }}</td>
+                </tr>
+                <tr>
+                    <td><b>Country:</b></td>
+                    <td>{{ row.country }}</td>
+                </tr>
+                <tr>
+                    <td><b>City:</b></td>
+                    <td>{{ row.city }}</td>
+                </tr>
+                <tr>
+                    <td><b>Street:</b></td>
+                    <td>{{ row.street }}</td>
+                </tr>
+                <tr>
+                    <td><b>Building:</b></td>
+                    <td>{{ row.building }}</td>
+                </tr>
+                <tr>
+                    <td><b>Cash:</b></td>
+                    <td>{{ row.cash }} SYP</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        
+    </table>     
+    <form action="/edit">
+        <button class="btn btn-primary" type="submit" value="Submit">Edit</button>
+    </form>
+{% endblock %}

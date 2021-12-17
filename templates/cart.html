@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Cart
+{% endblock %}
+
+{% block main %}
+    <h2>Cart</h2>
+    <form action="/cart" method="post">
+        <h6 class="float-left">This is your cart, but If you want to delete anything, please select</h6>
+        <select class="form-control" name="name" style="width: 250px;">
+            <option selected disabled value="None" placeholder="Select">Select</option>
+            {% for row in cart %}
+                <option value="{{ row.name }}">{{ row.name }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <button class="btn btn-danger" type="submit" value="Submit">Delete</button>
+        
+    </form>
+    <br>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Size</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in cart %}
+                <tr>
+                    <td> {{ row.type }} </td>
+                    <td> {{ row.name }} </td>
+                    <td> {{ row.quantity }} </td>
+                    <td> {{ row.size }} </td>
+                    <td> {{ row.price }} </td>
+                    <td> {{ row.total }} </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        <tr>
+            <td><b>TOTAL</b></td>
+            <td>  </td>
+            <td>  </td>
+            <td>  </td>
+            <td>  </td>
+            <td> None </td>
+        </tr>
+    </table>
+    <form action="/confirm"> 
+        <button class="btn btn-success" type="submit" value="Submit">Order</button>
+    </form>
+{% endblock %}
+

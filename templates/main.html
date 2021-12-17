@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+	    <meta name="viewport" content="initial-scale=1, width=device-width">
+	    
+		<title>Food For Everyone</title>
+		
+		<link href="/static/Food.ico" rel="icon">
+		<link rel="stylesheet" href="/static/Start.css">
+	</head>
+	<body>
+		<div class="wrapper">
+				<nav class="navbar">
+					{% if session.user_id %}
+	                    <ul>
+							<li><a class="active" href="/">Home</a></li>
+							<li><a href="/Menu">Menu</a></li>
+							<li><a href="/me">My Account</a></li>
+							<li><a href="/logout">Logout</a></li>
+			     			</ul>
+	                {% else %}
+	                    <ul>
+							<li><a class="active" href="/">Home</a></li>
+							<li><a href="/about">About</a></li>
+							<li><a href="/Sign Up">Sign Up</a></li>
+							<li><a href="/login">Login</a></li>
+			     		</ul>
+	                {% endif %}
+				</nav>
+				<div class="center">
+					<h1>Welcome To</h1>
+					<h2>Food For Everyone</h2>
+					<h3>OnlineResturant</h3>
+				</div>
+			</div>
+	</body>
+</html>

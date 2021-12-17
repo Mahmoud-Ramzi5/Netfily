@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Confirm
+{% endblock %}
+
+{% block main %}
+    <div>
+        <h2> Please Confirm Your Order </h2>
+    <br>
+    <img src="static/FOOD.jpg">
+    <br>
+    <br>
+    <form action="/confirm" method="post" onsubmit="Send()"> 
+        <button class="btn btn-success" type="submit" value="Submit">Confirm Order</button>
+    </form>
+    </div>
+    <script>
+        function Send() {
+        alert("Thank you for your order");}
+    </script>
+{% endblock %}
+

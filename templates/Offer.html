@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Menu
+{% endblock %}
+
+{% block main %}
+        <h1>Today's Offer</h1>
+        <br>
+        <form action="/Today's Offer" method="post">
+
+            <div>
+                <h3> Buy 4 Burgers and get the Fifth for free</h3>
+                <img class="Mimg" src="static/Burger.jpg">
+                <h3><input name="name" type="radio" value="Burger"> Burger </h3>
+                <h4>
+                    <input name="size" type="radio" value="Offer">Offer
+                    <input name="quantity" type="radio" value="5">5
+                </h4>
+                <h5 id="price">Price: Currently Unavailable</h5>
+            </div>
+
+            <br>
+            <button class="btn btn-primary" type="submit" value="Submit">Add to Cart</button>
+
+        </form>
+{% endblock %}

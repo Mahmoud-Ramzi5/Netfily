@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Menu
+{% endblock %}
+
+{% block main %}
+        <h1>Pizza Menu</h1>
+
+        <form action="/pizza" method="post">
+
+            <div class="float-left" >
+                <img class="Mimg" src="static/Margherita.jpg">
+                <h3><input name="name" type="radio" value="Margherita"> Margherita Pizza </h3>
+                <h4>
+                    <input name="size" type="radio" value="small">Small
+                    <input name="size" type="radio" value="large">Large
+                </h4>
+                <h5 id="price">Price: Currently Unavailable</h4>
+            </div>
+
+            <div class="float-Right" >
+                <img class="Mimg" src="static/Four Seasons.jpg">
+                <h3><input name="name" type="radio" value="Four Seasons"> Four Seasons Pizza </h3>
+                <h4>
+                    <input name="size" type="radio" value="small">Small
+                    <input name="size" type="radio" value="large">Large
+                </h4>
+                <h5 id="price">Price: Currently Unavailable</h5>
+            </div>
+
+            <div class="float-left" >
+                <img class="Mimg" src="static/Barbecue.jpg">
+                <h3><input name="name" type="radio" value="Barbecue"> Barbecue Pizza </h3>
+                <h4>
+                    <input name="size" type="radio" value="small">Small
+                    <input name="size" type="radio" value="large">Large
+                </h4>
+                <h5 id="price">Price: Currently Unavailable</h5>
+            </div>
+
+            <div class="float-Right" >
+                <img class="Mimg" src="static/Pepperoni.jpg">
+                <h3> <input name="name" type="radio" value="Pepperoni"> Pepperoni Pizza </h3>
+                <h4>
+                    <input name="size" type="radio" value="small">Small
+                    <input name="size" type="radio" value="large">Large
+                </h4>
+                <h5 id="price">Price: Currently Unavailable</h5>
+            </div>
+            <br>
+            <br>
+            <input class="form-control" required style="width: 150px;" name="quantity" placeholder="Quantity" type="number" min="1" max="10">
+            <br>
+            <br>
+            <button class="btn btn-primary" type="submit" value="Submit">Add to Cart</button>
+
+        </form>
+{% endblock %}
